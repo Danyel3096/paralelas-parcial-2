@@ -1,14 +1,11 @@
 version: '3.8'
 
 services:
-  app:
+  go-app:
     build:
       context: .
       dockerfile: Dockerfile
+    image: go-app
     ports:
       - "8080:8080"
-    volumes:
-      - .:/app
-    environment:
-      - GO_ENV=production
-    restart: unless-stopped
+    restart: always
